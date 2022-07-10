@@ -30,8 +30,8 @@ proc_testing = do
   (_, Just jout, _, _) <- createProcess (proc "cardano-cli" ["--version"]){ std_out = CreatePipe }
 
   -- (_, Just kout, _, _) <- createProcess (proc "cardano-cli" ["--", "query", "tip", "--testnet-magic", "1097911063"]){ std_out = CreatePipe }
-  let test_flags = ["--", "query", "tip", "--testnet-magic", "1097911063"] :: [String]
-  (_, Just kout, _, _) <- createProcess (proc "cardano-cli" test_flags){ std_out = CreatePipe }
+  let kout_flags = ["--", "query", "tip", "--testnet-magic", "1097911063"] :: [String]
+  (_, Just kout, _, _) <- createProcess (proc "cardano-cli" kout_flags){ std_out = CreatePipe }
 
 
   i  <- hGetContents iout
