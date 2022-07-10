@@ -26,6 +26,12 @@ query_tip = do
   k  <- hGetContents kout
   putStrLn $ k
 
+build_sc_keys :: String -> IO ()
+build_sc_keys _keysName = do
+  (_, Just kout, _, _) <- createProcess (proc "./scripts/build_sc_keys.sh" [_keysName]){ std_out = CreatePipe }
+  k  <- hGetContents kout
+  putStrLn $ k
+
 proc_testing :: IO ()
 proc_testing = do
   -- WITHOUT PIPING OUTPUT
@@ -37,6 +43,7 @@ proc_testing = do
   (_, Just jout, _, _) <- createProcess (proc "cardano-cli" ["--version"]){ std_out = CreatePipe }
 
   query_tip
+  build_sc_keys "testing"
 
   j  <- hGetContents jout
   
