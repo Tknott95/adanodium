@@ -30,6 +30,9 @@ proc_testing = do
   i  <- hGetContents iout
   j  <- hGetContents jout
   k  <- hGetContents kout
-  print $ i
-  print $ j
-  print $ k
+  -- print $ i
+  -- print $ j
+  -- print $ k
+  putStrLn $ i
+  putStrLn $ j
+  putStrLn $ k
