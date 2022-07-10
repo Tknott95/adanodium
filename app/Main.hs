@@ -40,5 +40,4 @@ proc_testing = do
 
   j  <- hGetContents jout
   
-  putStrLn $ i
   putStrLn $ j
