@@ -1,6 +1,7 @@
+module Main where
+
 import System.Process
 
-module Main where
 
 main :: IO ()
 main = do
