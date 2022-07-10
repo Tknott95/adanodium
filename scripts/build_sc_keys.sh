@@ -2,8 +2,9 @@
 
 # will use $1
 
-mkdir $1
-cd $1
+
+mkdir -p keys/$1
+cd keys/$1
 
 cardano-cli address key-gen \
 --verification-key-file $1_payment.vkey \
@@ -19,6 +20,6 @@ cardano-cli address build \
 --out-file $1_payment.addr \
 $MAGIC
 
-cd ../
+cd ../../
 
 echo "SMART CONTRACT KEYS CREATED FOR $1"
