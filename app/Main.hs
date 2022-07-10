@@ -6,6 +6,7 @@ import System.Process
 main :: IO ()
 main = do
   putStrLn "\n the Haskell API PAB replacement"
-  r <- createProcess (proc "ls" [])
+  i <- createProcess (proc "ls" [])
+  j <- createProcess (proc "cardano-cli" ["--version"])
 
   putStrLn "\n Finished adanodium"
