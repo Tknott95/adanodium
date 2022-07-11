@@ -27,6 +27,8 @@ paying_to_addr=$3
 # ../transactions/tx00/tx.build
 out_file_loc=$4
 
+amount_paying=30000000
+
 
 echo -e "\e[0;1;30m  UTXO CONSUMED: $utxo_consuming \e[0m"
 echo -e "\e[0;0;33m  SENDING TO: $paying_to_addr \e[0m"
@@ -38,5 +40,5 @@ cardano-cli transaction build \
   $MAGIC \
   --change-address $pay_addr_00 \
   --tx-in $utxo_consuming \
-  --tx-out $paying_to_addr+30000000 \
+  --tx-out $paying_to_addr+$amount_paying \
   --out-file $out_file_loc
