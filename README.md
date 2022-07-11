@@ -33,8 +33,8 @@ cat ../keys/alwayssucceeds/alwayssucceeds_payment.addr | ./query_head.sh
   ./submit_trans.sh ../transactions/tx00/tx.signed
 ```
 
-
-# MY_UTXO=$(cardano-cli query utxo --address $(cat $addrFile) $MAGIC | grep " 0 " | sed -n 1p | egrep  -o '[a-z0-9]+' | head -1)
-
+``` grab_utxo.sh | My script to query the first utxo
+ MY_UTXO=$(cardano-cli query utxo --address $(cat $addrFile) $MAGIC | grep " 0 " | sed -n 1p | egrep  -o '[a-z0-9]+' | head -1)
+```
 
 DEPRECATED: cat ../keys/alwayssucceeds/alwayssucceeds_payment.addr | ./build_trans.sh 
