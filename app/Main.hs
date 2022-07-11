@@ -44,6 +44,8 @@ proc_testing = do
 
   query_tip
   build_sc_keys "testing"
+  build_sc_keys "2525255325"
+  build_sc_keys "6486586865"
 
   j  <- hGetContents jout
   
