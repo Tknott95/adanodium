@@ -3,7 +3,8 @@
 sc_addr=$(cat ../keys/alwayssucceeds/alwayssucceeds_payment.addr)
 utxo_using=$(./grab_utxo.sh $sc_addr)"#0"
 
-echo $utxo_using
+echo "SC_ADDR USING: " $sc_addr
+echo "UTXO USING:  " $utxo_using
 
 # ./build_trans.sh \
 #   $sc_addr\
