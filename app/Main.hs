@@ -23,6 +23,7 @@ grab_utxo  _addr= do
   let kout_flags = [_addr] :: [String]
   (_, Just kout, _, _) <- createProcess (proc "./scripts/grab_utxo.sh" kout_flags){ std_out = CreatePipe }
   k  <- hGetContents kout
+  putStrLn $ "\n UTXO:    " ++ k
   putStrLn $ k
 
 -- just playing with modularities for now
@@ -53,6 +54,7 @@ proc_testing = do
   build_sc_keys "testing"
   build_sc_keys "2525255325"
   build_sc_keys "6486586865"
+  grab_utxo "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
 
   j  <- hGetContents jout
   
