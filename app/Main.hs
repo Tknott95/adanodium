@@ -17,6 +17,13 @@ main = do
   putStrLn "\n Finished adanodium"
 
 
+-- this one will return an IO String to then be used
+grab_utxo :: String -> IO ()
+grab_utxo  _addr= do
+  let kout_flags = [_addr] :: [String]
+  (_, Just kout, _, _) <- createProcess (proc "./scripts/grab_utxo.sh" kout_flags){ std_out = CreatePipe }
+  k  <- hGetContents kout
+  putStrLn $ k
 
 -- just playing with modularities for now
 query_tip :: IO ()
