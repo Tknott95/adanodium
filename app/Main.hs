@@ -25,8 +25,14 @@ buildFullTX :: String -> String -> String -> String -> IO ()
 buildFullTX _scriptAddr _utxoUsing _payoutAddr _txOutFileLoc = do
   let kout_flags = [ _scriptAddr, _utxoUsing, _payoutAddr, _txOutFileLoc] :: [String]
 
+  putStrLn $ concat kout_flags 
+
   (_, Just kout, _, _) <- createProcess (proc "./scripts/build_submit_sign_trans.sh" kout_flags){ std_out = CreatePipe }
-  k  <- hGetLine kout
+  print $ kout
+  
+  k  <- hGetContents kout
+
+  print k
 
   -- CHECK RETURN AND LOG ERRORS ACCORDINGLY
 

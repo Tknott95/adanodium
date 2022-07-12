@@ -31,4 +31,4 @@ echo "TX BUILT:  $tx_out_loc/tx.build"
 echo "TX SIGNED:  $tx_out_loc/tx.signed"
 
 
-./submit_trans.sh $tx_out_loc"/tx.signed"
+./scripts/submit_trans.sh $tx_out_loc"/tx.signed"
