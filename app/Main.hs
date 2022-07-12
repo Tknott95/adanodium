@@ -51,6 +51,8 @@ procTesting = do
   -- WITH PIPING OUTPUT
   -- (_, Just iout, _, _) <- createProcess (proc "ls" []){ std_out = CreatePipe }
   (_, Just jout, _, _) <- createProcess (proc "cardano-cli" ["--version"]){ std_out = CreatePipe }
+  j  <- hGetContents jout
+  putStrLn j
 
   queryTip
   buildScKeys "testing"
@@ -58,6 +60,4 @@ procTesting = do
   buildScKeys "6486586865"
   utxo_using <- grabUTXO "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
 
-  j  <- hGetContents jout
-  
-  putStrLn j
+  putStrLn utxo_using
