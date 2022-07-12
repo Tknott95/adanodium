@@ -17,6 +17,10 @@ main = do
   putStrLn "\n Finished adanodium"
 
 
+  -- @TODO
+  -- build out tulLTX into modular steps for signing
+  -- create types instead of passing in so many params
+
   -- $sc_addr\
   -- $utxo_using \
   -- $payout_addr \
