@@ -25,7 +25,6 @@ grabUTXO  _addr= do
   k  <- hGetLine kout
   let utxo = k++"#0" :: String
   putStrLn $ "\n UTXO:    " ++ utxo
-  putStrLn utxo
   return utxo
 
 -- just playing with modularities for now
