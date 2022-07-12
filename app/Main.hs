@@ -39,7 +39,7 @@ buildScKeys :: String -> IO ()
 buildScKeys _keysName = do
   (_, Just kout, _, _) <- createProcess (proc "./scripts/build_sc_keys.sh" [_keysName]){ std_out = CreatePipe }
   k  <- hGetContents kout
-  putStrLn $ k
+  putStrLn k
 
 procTesting :: IO ()
 procTesting = do
