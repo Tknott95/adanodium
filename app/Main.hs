@@ -18,14 +18,15 @@ main = do
 
 
 -- this one will return an IO String to then be used
-grabUTXO :: String -> IO ()
+grabUTXO :: String -> IO String
 grabUTXO  _addr= do
   let kout_flags = [_addr] :: [String]
   (_, Just kout, _, _) <- createProcess (proc "./scripts/grab_utxo.sh" kout_flags){ std_out = CreatePipe }
   k  <- hGetLine kout
-  let ijk = k++"#0" :: String
-  putStrLn $ "\n UTXO:    " ++ ijk
-  putStrLn ijk
+  let utxo = k++"#0" :: String
+  putStrLn $ "\n UTXO:    " ++ utxo
+  putStrLn utxo
+  return utxo
 
 -- just playing with modularities for now
 queryTip :: IO ()
