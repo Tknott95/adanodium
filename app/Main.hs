@@ -17,6 +17,15 @@ main = do
   putStrLn "\n Finished adanodium"
 
 
+  -- $sc_addr\
+  -- $utxo_using \
+  -- $payout_addr \
+  -- $tx_out_loc"/tx.build"
+buildFullTX :: String -> String -> String -> String -> IO ()
+buildFullTX _scriptAddr _utxoUsing _payoutAddr _txOutFileLoc = do
+  
+
+
 -- this one will return an IO String to then be used
 grabUTXO :: String -> IO String
 grabUTXO  _addr= do
