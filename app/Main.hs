@@ -28,6 +28,10 @@ buildFullTX _scriptAddr _utxoUsing _payoutAddr _txOutFileLoc = do
   (_, Just kout, _, _) <- createProcess (proc "./scripts/build_submit_sign_trans.sh" kout_flags){ std_out = CreatePipe }
   k  <- hGetLine kout
 
+  -- if null k
+  --   then 
+  --     print "ERROR"
+  --   else print k
   putStrLn k
 
 -- this one will return an IO String to then be used
@@ -66,16 +70,18 @@ procTesting = do
   j  <- hGetContents jout
   putStrLn j
 
+  utxo_using <- grabUTXO "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
+
+  let scrAddr = "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
+  let payoutAddr="addr_test1qpdvvdalsqscc3899gk67zdx7lkrlqlnwm3xzzk88jc65c50a06ns46p0wjxe6xqkvnrs4f79wjp6tz07wrl2k2nctyqqkhtak"
+  let txOutLoc="./transactions/tx00"
+  buildFullTX scrAddr utxo_using payoutAddr txOutLoc
+
+
   queryTip
   buildScKeys "testing"
   buildScKeys "2525255325"
   buildScKeys "6486586865"
-  utxo_using <- grabUTXO "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
 
-
-  let scrAddr = "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
-  let payoutAddr="addr_test1qpdvvdalsqscc3899gk67zdx7lkrlqlnwm3xzzk88jc65c50a06ns46p0wjxe6xqkvnrs4f79wjp6tz07wrl2k2nctyqqkhtak"
-  let txOutLoc="../transactions/tx00"
-  buildFullTX scrAddr utxo_using payoutAddr txOutLoc
  
   putStrLn utxo_using
