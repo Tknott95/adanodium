@@ -12,36 +12,39 @@ main :: IO ()
 main = do
   putStrLn "\n the Haskell API PAB replacement"
 
-  proc_testing
+  procTesting
 
   putStrLn "\n Finished adanodium"
 
 
 -- this one will return an IO String to then be used
-grab_utxo :: String -> IO ()
-grab_utxo  _addr= do
+grabUTXO :: String -> IO ()
+grabUTXO  _addr= do
   let kout_flags = [_addr] :: [String]
   (_, Just kout, _, _) <- createProcess (proc "./scripts/grab_utxo.sh" kout_flags){ std_out = CreatePipe }
-  k  <- hGetContents kout
-  putStrLn $ "\n UTXO:    " ++ k
-  putStrLn $ k
+  k  <- hGetLine kout
+  let ijk = k++"#0" :: String
+  putStrLn $ "\n UTXO:    " ++ ijk
+  putStrLn $ ijk
+
+  putStr $ k++"#0"
 
 -- just playing with modularities for now
-query_tip :: IO ()
-query_tip = do
+queryTip :: IO ()
+queryTip = do
   let kout_flags = ["--", "query", "tip", "--testnet-magic", "1097911063"] :: [String]
   (_, Just kout, _, _) <- createProcess (proc "cardano-cli" kout_flags){ std_out = CreatePipe }
   k  <- hGetContents kout
   putStrLn $ k
 
-build_sc_keys :: String -> IO ()
-build_sc_keys _keysName = do
+buildScKeys :: String -> IO ()
+buildScKeys _keysName = do
   (_, Just kout, _, _) <- createProcess (proc "./scripts/build_sc_keys.sh" [_keysName]){ std_out = CreatePipe }
   k  <- hGetContents kout
   putStrLn $ k
 
-proc_testing :: IO ()
-proc_testing = do
+procTesting :: IO ()
+procTesting = do
   -- WITHOUT PIPING OUTPUT
   -- j <- createProcess (proc "cardano-cli" ["--version"])
   -- k <- createProcess (proc "cardano-cli" ["--", "query", "tip", "--testnet-magic", "1097911063"])
@@ -50,12 +53,12 @@ proc_testing = do
   -- (_, Just iout, _, _) <- createProcess (proc "ls" []){ std_out = CreatePipe }
   (_, Just jout, _, _) <- createProcess (proc "cardano-cli" ["--version"]){ std_out = CreatePipe }
 
-  query_tip
-  build_sc_keys "testing"
-  build_sc_keys "2525255325"
-  build_sc_keys "6486586865"
-  grab_utxo "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
+  queryTip
+  buildScKeys "testing"
+  buildScKeys "2525255325"
+  buildScKeys "6486586865"
+  grabUTXO "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
 
   j  <- hGetContents jout
   
-  putStrLn $ j
+  putStrLn j
