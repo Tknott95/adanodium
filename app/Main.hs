@@ -56,7 +56,7 @@ procTesting = do
   buildScKeys "testing"
   buildScKeys "2525255325"
   buildScKeys "6486586865"
-  grabUTXO "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
+  utxo_using <- grabUTXO "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
 
   j  <- hGetContents jout
   
