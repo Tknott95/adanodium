@@ -25,9 +25,7 @@ grabUTXO  _addr= do
   k  <- hGetLine kout
   let ijk = k++"#0" :: String
   putStrLn $ "\n UTXO:    " ++ ijk
-  putStrLn $ ijk
-
-  putStr $ k++"#0"
+  putStrLn ijk
 
 -- just playing with modularities for now
 queryTip :: IO ()
