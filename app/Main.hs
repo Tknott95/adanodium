@@ -28,7 +28,7 @@ buildFullTX _scriptAddr _utxoUsing _payoutAddr _txOutFileLoc = do
   putStrLn $ concat kout_flags 
 
   (_, Just kout, _, _) <- createProcess (proc "./scripts/build_submit_sign_trans.sh" kout_flags){ std_out = CreatePipe }
-  print $ kout
+  print kout
   
   k  <- hGetContents kout
 
