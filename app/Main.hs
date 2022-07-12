@@ -33,7 +33,7 @@ queryTip = do
   let kout_flags = ["--", "query", "tip", "--testnet-magic", "1097911063"] :: [String]
   (_, Just kout, _, _) <- createProcess (proc "cardano-cli" kout_flags){ std_out = CreatePipe }
   k  <- hGetContents kout
-  putStrLn $ k
+  putStrLn k
 
 buildScKeys :: String -> IO ()
 buildScKeys _keysName = do
