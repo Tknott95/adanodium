@@ -13,7 +13,7 @@ import NodeProcs (buildFullTX, grabUTXO, queryTip, buildScKeys)
 
 main :: IO ()
 main = do
-  putStrLn "\n the Haskell API PAB replacement"
+  putStrLn "\n to be disclosed later"
 
   procTesting
 
@@ -41,8 +41,8 @@ procTesting = do
   buildFullTX scrAddr utxo_using payoutAddr txOutLoc
 
 
-  queryTip
-  buildScKeys "testing"
+  -- queryTip
+  -- buildScKeys "testing"
   buildScKeys "2525255325"
   buildScKeys "6486586865"
 
