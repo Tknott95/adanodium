@@ -7,4 +7,3 @@ cabal run adanodium
 # ghc app/main.hs -o main ; rm -f *.o *.hi
 # echo
 # ./main
-
