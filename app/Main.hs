@@ -10,6 +10,14 @@ import NodeProcs (buildFullTX, grabUTXO, queryTip, buildScKeys)
 -- Pack flags with next item on list as flag val 
 -- into a large list of strings for params.
 
+-- data TXInfo String String String String
+data TXInfo = TXInfo {
+   scriptAddr :: String,
+   utxoUsing :: String,
+   payoutAddr :: String,
+   txOutLoc :: String 
+}
+
 
 main :: IO ()
 main = do
