@@ -7,7 +7,12 @@ sc_skey=./keys/alwayssucceeds/alwayssucceeds_payment.skey
 
 # @TODO - make this dynamic - this is X4Wallet137
 payout_addr=addr_test1qpdvvdalsqscc3899gk67zdx7lkrlqlnwm3xzzk88jc65c50a06ns46p0wjxe6xqkvnrs4f79wjp6tz07wrl2k2nctyqqkhtak
-tx_out_loc=./transactions/tx00
+
+tx_dir_name=$1
+
+mkdir ./transactions/$tx_dir_name
+tx_out_loc="./transactions/"$tx_dir_name
+
 
 echo "SC_ADDR USING: " $sc_addr
 echo "UTXO USING:  " $utxo_using
