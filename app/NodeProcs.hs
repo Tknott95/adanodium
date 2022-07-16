@@ -5,7 +5,7 @@ module NodeProcs where
 import System.IO
 import System.Process
 
-import TxModels
+import TxModels(TXInfo (..))
 
 -- @TODO abstract this importing
 -- data TXInfo = TXInfo {
