@@ -1,6 +1,6 @@
 #!/bin/sh
 
-read input_piped_in
+# read input_piped_in
 
-cardano-cli query utxo --address $input_piped_in $MAGIC
+cardano-cli query utxo --address $1 $MAGIC
 
