@@ -1,4 +1,4 @@
-module TxModel where
+module TxModels where
 
 data TXInfo = TXInfo {
    scriptAddr :: String,
