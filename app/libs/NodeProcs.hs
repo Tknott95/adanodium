@@ -1,29 +1,11 @@
 module NodeProcs where
 -- (TXInfo(..), buildFullTX, grabUTXO, queryTip, buildScKeys) where
 
-
 import System.IO
 import System.Process
 
 import TxModels(TXInfo (..))
 
--- @TODO abstract this importing
--- data TXInfo = TXInfo {
---    scriptAddr :: String,
---    utxoUsing :: String,
---    payoutAddr :: String,
---    txOutLoc :: String 
--- } deriving Show
-
-
- -- @TODO
-  -- build out tulLTX into modular steps for signing
-  -- create types instead of passing in so many params
-
-  -- $sc_addr\
-  -- $utxo_using \
-  -- $payout_addr \
-  -- $tx_out_loc"/tx.build"
 -- buildFullTX :: String -> String -> String -> String -> IO ()
 -- buildFullTX _scriptAddr _utxoUsing _payoutAddr _txOutFileLoc = do
 buildFullTX :: TXInfo -> IO ()
