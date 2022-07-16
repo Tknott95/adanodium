@@ -4,7 +4,7 @@ import System.IO
 import System.Process
 
 
-import NodeProcs (buildFullTX, grabUTXO, queryTip, buildScKeys) 
+import NodeProcs (buildFullTX, grabUTXO, queryTip, buildScKeys, buildTX, signTX, submitTX) 
 
 import TxModels(TXInfo (..))
 
@@ -46,12 +46,23 @@ procTesting = do
     txOutLoc = "./transactions/tx00"
   }
 
-  let ijk = show ijk;
+  let newTXAlt = TXInfo{
+    scriptAddr = "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v",
+    utxoUsing = utxo_using,
+    payoutAddr = "addr_test1qpdvvdalsqscc3899gk67zdx7lkrlqlnwm3xzzk88jc65c50a06ns46p0wjxe6xqkvnrs4f79wjp6tz07wrl2k2nctyqqkhtak",
+    txOutLoc = "txAltTesting00"
+    -- above will be a folder name with this new proc split out - for now
+  }
+
   print $ show newTX
 
   -- buildFullTX scrAddr utxo_using payoutAddr txOutLoc
-  buildFullTX newTX
+  
+  -- buildFullTX newTX
 
+  buildTX newTXAlt
+  signTX  newTXAlt
+  submitTX newTXAlt
 
   -- queryTip
   -- buildScKeys "testing"
