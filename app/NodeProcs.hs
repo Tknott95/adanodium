@@ -5,13 +5,15 @@ module NodeProcs where
 import System.IO
 import System.Process
 
+import TxModels
+
 -- @TODO abstract this importing
-data TXInfo = TXInfo {
-   scriptAddr :: String,
-   utxoUsing :: String,
-   payoutAddr :: String,
-   txOutLoc :: String 
-} deriving Show
+-- data TXInfo = TXInfo {
+--    scriptAddr :: String,
+--    utxoUsing :: String,
+--    payoutAddr :: String,
+--    txOutLoc :: String 
+-- } deriving Show
 
 
  -- @TODO
