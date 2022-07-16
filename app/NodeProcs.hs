@@ -4,6 +4,15 @@ module NodeProcs(buildFullTX, grabUTXO, queryTip, buildScKeys) where
 import System.IO
 import System.Process
 
+-- @TODO abstract this importing
+data TXInfo = TXInfo {
+   scriptAddr :: String,
+   utxoUsing :: String,
+   payoutAddr :: String,
+   txOutLoc :: String 
+} deriving Show
+
+
  -- @TODO
   -- build out tulLTX into modular steps for signing
   -- create types instead of passing in so many params
