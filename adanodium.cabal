@@ -26,12 +26,12 @@ executable adanodium
     main-is:          Main.hs
 
     -- Modules included in this executable, other than Main.
-    other-modules:  NodeProcs
+    other-modules:  NodeProcs TxModel
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
     -- 4.14.3.0
     build-depends:    process, base ^>=4.15.1.0
     -- ghc-options:      -Wall
-    hs-source-dirs:   app
+    hs-source-dirs:   app, app/models
     default-language: Haskell2010
