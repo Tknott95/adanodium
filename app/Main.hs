@@ -57,7 +57,6 @@ procTesting = do
   print $ show newTX
 
   -- buildFullTX scrAddr utxo_using payoutAddr txOutLoc
-  
   -- buildFullTX newTX
 
   buildTX newTXAlt
