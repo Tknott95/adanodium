@@ -4,19 +4,11 @@ import System.IO
 import System.Process
 
 
-import NodeProcs (buildFullTX, grabUTXO, queryTip, buildScKeys) 
+import NodeProcs (TXInfo (..), buildFullTX, grabUTXO, queryTip, buildScKeys) 
 
 -- @NOTES
 -- Pack flags with next item on list as flag val 
 -- into a large list of strings for params.
-
--- @TODO abstract this importing
-data TXInfo = TXInfo {
-   scriptAddr :: String,
-   utxoUsing :: String,
-   payoutAddr :: String,
-   txOutLoc :: String 
-} deriving Show
 
 main :: IO ()
 main = do
@@ -46,7 +38,7 @@ procTesting = do
   let payoutAddr="addr_test1qpdvvdalsqscc3899gk67zdx7lkrlqlnwm3xzzk88jc65c50a06ns46p0wjxe6xqkvnrs4f79wjp6tz07wrl2k2nctyqqkhtak"
   let txOutLoc="./transactions/tx00"
 
-  let newTX = TXInfo {
+  let newTX = NodeProcs.TXInfo{
     scriptAddr = scrAddr,
     utxoUsing = utxo_using,
     payoutAddr = payoutAddr,
@@ -56,7 +48,8 @@ procTesting = do
   let ijk = show ijk;
   print $ show newTX
 
-  buildFullTX scrAddr utxo_using payoutAddr txOutLoc
+  -- buildFullTX scrAddr utxo_using payoutAddr txOutLoc
+  buildFullTX newTX
 
 
   -- queryTip

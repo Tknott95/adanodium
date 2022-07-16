@@ -1,4 +1,5 @@
-module NodeProcs(buildFullTX, grabUTXO, queryTip, buildScKeys) where
+module NodeProcs where
+-- (TXInfo(..), buildFullTX, grabUTXO, queryTip, buildScKeys) where
 
 
 import System.IO
@@ -21,9 +22,11 @@ data TXInfo = TXInfo {
   -- $utxo_using \
   -- $payout_addr \
   -- $tx_out_loc"/tx.build"
-buildFullTX :: String -> String -> String -> String -> IO ()
-buildFullTX _scriptAddr _utxoUsing _payoutAddr _txOutFileLoc = do
-  let kout_flags = [ _scriptAddr, _utxoUsing, _payoutAddr, _txOutFileLoc] :: [String]
+-- buildFullTX :: String -> String -> String -> String -> IO ()
+-- buildFullTX _scriptAddr _utxoUsing _payoutAddr _txOutFileLoc = do
+buildFullTX :: TXInfo -> IO ()
+buildFullTX _txInfo = do
+  let kout_flags = [ scriptAddr _txInfo, utxoUsing _txInfo, payoutAddr _txInfo, txOutLoc _txInfo] :: [String]
 
   putStrLn $ concat kout_flags 
 
@@ -35,8 +38,28 @@ buildFullTX _scriptAddr _utxoUsing _payoutAddr _txOutFileLoc = do
   print k
 
   -- CHECK RETURN AND LOG ERRORS ACCORDINGLY
+  -- if null k - maybe and exceptions to call errors
+  --   then 
+  --     print "ERROR"
+  --   else print k
+  putStrLn k
 
-  -- if null k
+
+buildTX :: TXInfo -> IO ()
+buildTX _txInfo = do
+  let kout_flags = [ scriptAddr _txInfo, utxoUsing _txInfo, payoutAddr _txInfo, txOutLoc _txInfo] :: [String]
+
+  putStrLn $ concat kout_flags 
+
+  (_, Just kout, _, _) <- createProcess (proc "./scripts/build_submit_sign_trans.sh" kout_flags){ std_out = CreatePipe }
+  print kout
+  
+  k  <- hGetContents kout
+
+  print k
+
+  -- CHECK RETURN AND LOG ERRORS ACCORDINGLY
+  -- if null k - maybe and exceptions to call errors
   --   then 
   --     print "ERROR"
   --   else print k
