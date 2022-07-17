@@ -1,5 +1,9 @@
 # adanodium
 
+``
+ Setting up for PlutusV2 here soon. Already compiling scripta and doing research.
+``
+
 fire up http servers to play with the cardano node, including my very own cardano tooling, without launching a pab
 
 
