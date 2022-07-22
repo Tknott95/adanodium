@@ -10,6 +10,7 @@ payout_addr=addr_test1qpdvvdalsqscc3899gk67zdx7lkrlqlnwm3xzzk88jc65c50a06ns46p0w
 
 tx_dir_name=$1
 
+# zrv -f check it first
 mkdir ./transactions/$tx_dir_name
 tx_out_loc="./transactions/"$tx_dir_name
 

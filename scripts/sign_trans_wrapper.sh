@@ -2,7 +2,7 @@
 
 tx_dir_name=$1
 
-sc_skey=./keys/alwayssucceeds/alwayssucceeds_payment.skey
+sc_skey=./keys/alwayssucceeds-v2/alwayssucceeds-v2_payment.skey
 tx_out_loc=./transactions/$tx_dir_name
 
 echo "SC_ADDR USING: " $sc_addr
