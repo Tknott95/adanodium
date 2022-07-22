@@ -54,15 +54,16 @@ procTesting = do
     txOutLoc = "txAltTesting00"
     -- above will be a folder name with this new proc split out - for now
   }
+  --  txOutLoc = "txAltTesting00"
 
   print $ show newTX
 
   -- buildFullTX scrAddr utxo_using payoutAddr txOutLoc
-  -- buildFullTX newTX
+  -- buildFullTX newTXAltV2
 
   buildTX newTXAltV2
-  signTX  newTXAltV2
-  submitTX newTXAltV2
+  -- signTX  newTXAltV2
+  -- submitTX newTXAltV2
 
   -- queryTip
   -- buildScKeys "testing"
