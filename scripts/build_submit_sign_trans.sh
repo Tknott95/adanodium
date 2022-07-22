@@ -1,6 +1,7 @@
 #!/bin/sh
 
 sc_addr=$(cat ./keys/alwayssucceeds/alwayssucceeds_payment.addr)
+# sc_addr=$(cat ./keys/alwayssucceeds-v2/alwayssucceeds-v2_payment.addr)
 utxo_using=$(./scripts/grab_utxo.sh $sc_addr)"#0"
 
 sc_skey=./keys/alwayssucceeds/alwayssucceeds_payment.skey
