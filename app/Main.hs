@@ -46,8 +46,8 @@ procTesting = do
     txOutLoc = "./transactions/tx00"
   }
 
-  let newTXAlt = TXInfo{
-    scriptAddr = "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v",
+  let newTXAltV2 = TXInfo{
+    scriptAddr = "addr_test1qrkdtsmvwl87u89arnhpjvxz2kp4gkhpk7lh0de4uzz03wyelc24kl7x4c5kay2rv4r6lz4ugu5yjaeraawcdgzztg8s6l3x4x",
     utxoUsing = utxo_using,
     payoutAddr = "addr_test1qpdvvdalsqscc3899gk67zdx7lkrlqlnwm3xzzk88jc65c50a06ns46p0wjxe6xqkvnrs4f79wjp6tz07wrl2k2nctyqqkhtak",
     txOutLoc = "txAltTesting00"
@@ -59,9 +59,9 @@ procTesting = do
   -- buildFullTX scrAddr utxo_using payoutAddr txOutLoc
   -- buildFullTX newTX
 
-  buildTX newTXAlt
-  signTX  newTXAlt
-  submitTX newTXAlt
+  buildTX newTXAltV2
+  signTX  newTXAltV2
+  submitTX newTXAltV2
 
   -- queryTip
   -- buildScKeys "testing"

@@ -31,7 +31,7 @@ executable adanodium
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
     -- 4.14.3.0
-    build-depends:    process, base ^>=4.15.1.0
+    build-depends:    process, base ^>=4.14.3.0
     -- ghc-options:      -Wall
     hs-source-dirs:   app, app/models, app/libs
     default-language: Haskell2010
