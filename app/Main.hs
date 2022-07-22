@@ -34,7 +34,8 @@ procTesting = do
   -- j  <- hGetContents jout
   -- putStrLn j
 
-  utxo_using <- grabUTXO "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
+  -- ADDR USING HAS TO BE HERE TO GET PROPER UTXO 
+  utxo_using <- grabUTXO "addr_test1qrkdtsmvwl87u89arnhpjvxz2kp4gkhpk7lh0de4uzz03wyelc24kl7x4c5kay2rv4r6lz4ugu5yjaeraawcdgzztg8s6l3x4x"
   -- let scrAddr = "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
   -- let payoutAddr="addr_test1qpdvvdalsqscc3899gk67zdx7lkrlqlnwm3xzzk88jc65c50a06ns46p0wjxe6xqkvnrs4f79wjp6tz07wrl2k2nctyqqkhtak"
   -- let txOutLoc="./transactions/tx00"
@@ -56,14 +57,14 @@ procTesting = do
   }
   --  txOutLoc = "txAltTesting00"
 
-  print $ show newTX
+ -- print $ show newTX
 
   -- buildFullTX scrAddr utxo_using payoutAddr txOutLoc
   -- buildFullTX newTXAltV2
 
   buildTX newTXAltV2
-  signTX  newTXAltV2
-  -- submitTX newTXAltV2
+  --signTX  newTXAltV2
+  --submitTX newTXAltV2
 
   -- queryTip
   -- buildScKeys "testing"
