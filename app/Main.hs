@@ -63,8 +63,8 @@ procTesting = do
   -- buildFullTX newTXAltV2
 
   buildTX newTXAltV2
-  --signTX  newTXAltV2
-  --submitTX newTXAltV2
+  signTX  newTXAltV2
+  submitTX newTXAltV2
 
   -- queryTip
   -- buildScKeys "testing"
