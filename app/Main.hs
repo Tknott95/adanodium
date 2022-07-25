@@ -24,16 +24,6 @@ main = do
 
 procTesting :: IO ()
 procTesting = do
-  -- WITHOUT PIPING OUTPUT
-  -- j <- createProcess (proc "cardano-cli" ["--version"])
-  -- k <- createProcess (proc "cardano-cli" ["--", "query", "tip", "--testnet-magic", "1097911063"])
-
-  -- WITH PIPING OUTPUT
-  -- (_, Just iout, _, _) <- createProcess (proc "ls" []){ std_out = CreatePipe }
-  -- (_, Just jout, _, _) <- createProcess (proc "cardano-cli" ["--version"]){ std_out = CreatePipe }
-  -- j  <- hGetContents jout
-  -- putStrLn j
-
   -- ADDR USING HAS TO BE HERE TO GET PROPER UTXO 
   utxo_using <- grabUTXO "addr_test1qrkdtsmvwl87u89arnhpjvxz2kp4gkhpk7lh0de4uzz03wyelc24kl7x4c5kay2rv4r6lz4ugu5yjaeraawcdgzztg8s6l3x4x"
   -- let scrAddr = "addr_test1qrpxufgw8y6dgyl758s37fcea2gm0pvfyrwnths06utp9tr2fgmkqt63xvatw9uufc4q9sdfrwt4hzmp54v6s9jlv2aq0ptj4v"
