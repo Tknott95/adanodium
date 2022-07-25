@@ -68,7 +68,7 @@ procTesting = do
 
   -- queryTip
   -- buildScKeys "testing"
-  buildScKeys "2525255325"
+  -- buildScKeys "2525255325"
   buildScKeys "6486586865"
 
  
