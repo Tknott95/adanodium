@@ -1,7 +1,7 @@
 cabal-version: 3.6      
 -- 2.4
 name:               adanodium
-version:            0.1.0.0
+version:            0.1.0.1
 
 -- A short (one-line) description of the package.
 -- synopsis:
