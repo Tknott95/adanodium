@@ -1,5 +1,12 @@
 # adanodium
 
+``` @NOTES
+ - will be slapping in an http server
+ - this is meant to be a library
+ - possibly compile into libray then use with an http server in another app
+
+```
+
 ``
  Setting up for PlutusV2 here soon. Already compiling scripta and doing research.
 ``
