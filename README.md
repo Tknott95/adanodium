@@ -1,6 +1,8 @@
 # adanodium
 
 ``` @NOTES
+ - build into a library first inside cabal
+
  - will be slapping in an http server
  - this is meant to be a library
  - possibly compile into libray then use with an http server in another app
