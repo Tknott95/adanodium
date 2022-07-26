@@ -9,6 +9,11 @@
 
 ```
 
+``` @TODO
+ - config Library inside cabal file
+ - test library in another codebase
+```
+
 ``
  Setting up for PlutusV2 here soon. Already compiling scripta and doing research.
 ``
