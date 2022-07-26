@@ -1,6 +1,8 @@
 # adanodium
 
 ``` @NOTES
+ - the shell scripts are shit and everything will be changeed after a nice MVP
+ - another system is to be used
  - build into a library first inside cabal
 
  - will be slapping in an http server
