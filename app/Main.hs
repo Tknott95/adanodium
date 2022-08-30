@@ -61,5 +61,4 @@ procTesting = do
   -- buildScKeys "2525255325"
   -- buildScKeys "6486586865"
 
- 
   putStrLn utxo_using
