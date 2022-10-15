@@ -50,11 +50,11 @@ procTesting = do
  -- print $ show newTX
 
   -- buildFullTX scrAddr utxo_using payoutAddr txOutLoc
-  -- buildFullTX newTXAltV2
+  buildFullTX newTXAltV2
 
-  buildTX newTXAltV2
-  signTX  newTXAltV2
-  submitTX newTXAltV2
+  -- buildTX newTXAltV2
+  -- signTX  newTXAltV2
+  -- submitTX newTXAltV2
 
   -- queryTip
   -- buildScKeys "testing"

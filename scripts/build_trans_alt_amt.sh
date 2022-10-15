@@ -27,7 +27,7 @@ paying_to_addr=$3
 # ../transactions/tx00/tx.build
 out_file_loc=$4
 
-amount_paying=30000000
+amount_paying=3000000
 
 
 echo -e "\e[0;1;30m  UTXO CONSUMED: $utxo_consuming \e[0m"
