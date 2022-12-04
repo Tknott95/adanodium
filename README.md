@@ -1,4 +1,14 @@
-# adanodium
+# DEPRECATED PROJECT
+# DEPRECATED PROJECT
+# DEPRECATED PROJECT
+# DEPRECATED PROJECT
+
+
+
+### adanodium
+
+
+# DEPRECATED PROJECT
 
 ``` @NOTES
  - the shell scripts are shit and everything will be changeed after a nice MVP
